@@ -1,0 +1,21 @@
+LOGIN_LEHA = Gavriljak9e5
+PASSWORD_LEHA = 42iuhh2yzu
+
+LOGIN_IGOR = zajcev9e9
+PASSWORD_IGOR = myblfvrpug
+
+LOGIN_DASHA = kalinkova9e0
+PASSWORD_DASHA = sn8wq4xmie
+
+LOGIN_NIKITA = chitakov9em
+PASSWORD_NIKITA = 371h6up5ge
+
+LOGIN_YRA = hromenkov9el
+PASSWORD_YRA = wnnvsm65a8
+
+LOGIN_KATE = komkova9eb
+PASSWORD_KATE = oj4oeo5o8l
+
+LOGIN_SASHA = doroshhenko9e8
+PASSWORD_SASHA = qxp82nkxj6
+
