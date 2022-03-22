@@ -6,14 +6,16 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
 
-wait = int(input('Сколько ждать перед выполнением программы?(сек): '))
+#wait = int(input('Сколько ждать перед выполнением программы?(сек): '))
 
-LOGIN = input('ENTER YOUR LOGIN: ')
-PASSWORD = input('ENTER YOUR PASSWORD: ')
+#LOGIN = input('ENTER YOUR LOGIN: ')
+#PASSWORD = input('ENTER YOUR PASSWORD: ')
+LOGIN = 'zajcev9e9'
+PASSWORD = 'myblfvrpug'
 
-print("\n------------------------------\nTHE PROGRAM IS WAITING " + str(wait) + " SECONDS")
-time.sleep(wait)
-print("\n------------------------------\nTHE PROGRAM IS RUNNING...")
+#print("\n------------------------------\nTHE PROGRAM IS WAITING " + str(wait) + " SECONDS")
+#time.sleep(wait)
+#print("\n------------------------------\nTHE PROGRAM IS RUNNING...")
 
 
 def function():
@@ -31,7 +33,7 @@ def function():
             result = cursor.fetchone()
             if result[0] == None:
                 print("Ответа нет в БД!")
-                time.sleep(1)
+                #time.sleep(1)
                 random_answer(question)
             elif result[0] != None:
                 #print("Ответ есть в БД! = " + result[0])
@@ -47,34 +49,34 @@ def function():
                 except NoSuchElementException:
                     answer5 = 0
                 if result[0] == answer1[3:]:
-                    time.sleep(10)
+                    #time.sleep(10)
                     driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[1]/div[2]/div/div[2]/div[2]/div[1]/input').click()
-                    time.sleep(7)
-                    #driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[1]/div[2]/div/div[3]/input').click()
+                    #time.sleep(7)
+                    driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[1]/div[2]/div/div[3]/input').click()
                     #time.sleep(5)
                 elif result[0] == answer2[3:]:
-                    time.sleep(10)
+                    #time.sleep(10)
                     driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[1]/div[2]/div/div[2]/div[2]/div[2]/input').click()
-                    time.sleep(7)
-                    #driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[1]/div[2]/div/div[3]/input').click()
+                    #time.sleep(7)
+                    driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[1]/div[2]/div/div[3]/input').click()
                     #time.sleep(5)
                 elif result[0] == answer3[3:]:
-                    time.sleep(10)
+                    #time.sleep(10)
                     driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[1]/div[2]/div/div[2]/div[2]/div[3]/input').click()
-                    time.sleep(7)
-                    #driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[1]/div[2]/div/div[3]/input').click()
+                    #time.sleep(7)
+                    driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[1]/div[2]/div/div[3]/input').click()
                     #time.sleep(5)
                 elif result[0] == answer4[3:]:
-                    time.sleep(10)
+                    #time.sleep(10)
                     driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[1]/div[2]/div/div[2]/div[2]/div[4]/input').click()
-                    time.sleep(7)
-                    #driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[1]/div[2]/div/div[3]/input').click()
+                    #time.sleep(7)
+                    driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[1]/div[2]/div/div[3]/input').click()
                     #time.sleep(5)
                 elif result[0] == answer5[3:] and answer5 != 0:
-                    time.sleep(10)
+                    #time.sleep(10)
                     driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[1]/div[2]/div/div[2]/div[2]/div[5]/input').click()
-                    time.sleep(7)
-                    #driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[1]/div[2]/div/div[3]/input').click()
+                    #time.sleep(7)
+                    driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[1]/div[2]/div/div[3]/input').click()
                     #time.sleep(5)
 
 
@@ -100,7 +102,7 @@ def random_answer(question):
             cursor.execute("UPDATE Economy SET answer = (?) WHERE question = (?)", [answer, question])
             sqlite_connection.commit()
             print("Ответ верный и он добавлен в БД!!! = " + answer)
-            time.sleep(1)
+            #time.sleep(1)
         except NoSuchElementException:
             pass
             #print("Ответ неверный")
@@ -117,7 +119,7 @@ def random_answer(question):
             cursor.execute("UPDATE Economy SET answer = (?) WHERE question = (?)", [answer, question])
             sqlite_connection.commit()
             print("Ответ верный и он добавлен в БД!!! = " + answer)
-            time.sleep(1)
+            #time.sleep(1)
         except NoSuchElementException:
             pass
             #print("Ответ неверный")
@@ -134,7 +136,7 @@ def random_answer(question):
             cursor.execute("UPDATE Economy SET answer = (?) WHERE question = (?)", [answer, question])
             sqlite_connection.commit()
             print("Ответ верный и он добавлен в БД!!! = " + answer)
-            time.sleep(1)
+            #time.sleep(1)
         except NoSuchElementException:
             pass
             #print("Ответ неверный")
@@ -151,7 +153,7 @@ def random_answer(question):
             cursor.execute("UPDATE Economy SET answer = (?) WHERE question = (?)", [answer, question])
             sqlite_connection.commit()
             print("Ответ верный и он добавлен в БД!!! = " + answer)
-            time.sleep(1)
+            #time.sleep(1)
         except NoSuchElementException:
             pass
             #print("Ответ неверный")
@@ -170,7 +172,7 @@ def random_answer(question):
             answer = answer[3:]
             cursor.execute("UPDATE Economy SET answer = (?) WHERE question = (?)", [answer, question])
             sqlite_connection.commit()
-            print("Ответ верный и он добавлен в БД!!! = " + answer)
+            #print("Ответ верный и он добавлен в БД!!! = " + answer)
             time.sleep(1)
         except NoSuchElementException:
             pass
@@ -191,20 +193,30 @@ driver.find_element(By.ID, "loginbtn").click()
 
 driver.get('http://dist.bsut.by/mod/quiz/view.php?id=7482')
 
-driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section/div/div[1]/div[3]/div/form').click()
-#driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section/div/div[1]/div[2]/div/form').click()
+try:
+    driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section/div/div[1]/div[3]/div/form').click()
+except:
+    driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section/div/div[1]/div[2]/div/form').click()
+
+try:
+    driver.find_element(By.XPATH,'/html/body/div[1]/div[2]/div/div/section/div/div[1]/form/div[2]/div[2]/div[1]/span/input').click()
+except:
+    pass
+
+
 
 try:
     sqlite_connection = sqlite3.connect('accreditation.db')
     cursor = sqlite_connection.cursor()
 
-    #function()
-    #driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[2]/input').click()
 
-    x = 1
+    x = 0
     while x < 50:
         function()
-        driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[2]/input[2]').click()
+        try:
+            driver.find_element(By.XPATH,'/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[2]/input[2]').click()
+        except:
+            driver.find_element(By.XPATH,'/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/form/div/div[2]/input').click()
         x += 1
 
     #driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div/section[1]/div/div[1]/div[3]/div/div/form').click()
